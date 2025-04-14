@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MapContainer from './MapContainer';
+import dasLogo from '../dasLogo.png';
 
 function Restaurants() {
   const [restaurants, setRestaurants] = useState([]);
@@ -22,8 +23,9 @@ function Restaurants() {
   );
 
   return (
-    <div className="container">
-        <h1 id="dd">Dastarkhanga kosh keldiniz!</h1>
+    <div>
+      <img src={dasLogo} className="logo"></img>
+      <h3 id="wd">Dastarkhanga kosh keldiniz!</h3>
       <h1>Restaurants</h1>
       <input
         type="text"

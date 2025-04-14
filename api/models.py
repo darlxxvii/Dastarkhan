@@ -9,7 +9,7 @@ class Restaurant(models.Model):
     longitude = models.FloatField()
     cuisine = models.CharField(max_length=100)
     def update_average_rating(self):
-        reviews = self.reviews.all()  # Предполагается, что связь между ресторанами и отзывами настроена
+        reviews = self.reviews.all()  
         if reviews.exists():
             total_rating = sum([review.rating for review in reviews])
             self.average_rating = total_rating / reviews.count()

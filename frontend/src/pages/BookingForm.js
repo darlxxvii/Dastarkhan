@@ -74,7 +74,7 @@ function BookingForm() {
             <h3>Make a reservation</h3>
             <form onSubmit={handleSubmit}>
                 <label>Choose a table:</label>
-                <select name="tableId" onChange={handleChange} value={formData.tableId} required>
+                <select name="tableId" class="choose" onChange={handleChange} value={formData.tableId} required>
                     <option value="">--Choose--</option>
                     {tables.length > 0 ? (
                         tables.filter(table => table.is_available).map(table => (

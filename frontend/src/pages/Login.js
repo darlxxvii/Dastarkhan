@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import dasLogo from '../dasLogo.png';
+
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -26,18 +28,22 @@ function Login() {
 
     return (
         <div>
-            <h2>Log in</h2>
+            <img src={dasLogo} className="logo"></img>
+            <h2 id="wd">Welcome to Dastarkhan! </h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>login: </label>
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <div>
-                    <label>password </label>
+                    <label>password: </label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="submit">Log in</button>
             </form>
+            <p className="no-account-text">
+      Don’t have an account? <a href="/register">Register</a>
+    </p>
         </div>
     );
 }

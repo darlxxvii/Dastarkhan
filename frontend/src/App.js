@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import BookingForm from './pages/BookingForm';
 import Reviews from './pages/Reviews';
 import RestaurantMenu from './pages/RestaurantMenu';
-import MapContainer from './pages/MapContainer';
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Restaurants />} />
-        
+          <Route path="/register/" element={< RegistrationPage/>} />
+
           <Route
             path="/restaurant/:id" element={<RestaurantDetail />}
           />

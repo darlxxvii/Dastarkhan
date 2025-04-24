@@ -8,9 +8,8 @@ export class MenuService {
 
   constructor(private http: HttpClient) {}
 
-  // Получить меню по restaurantId
-  getMenu(restaurantId: number): Observable<any[]> {
-    const url = `${this.baseUrl}${restaurantId}/menu/`;
-    return this.http.get<any[]>(url);
+
+  getMenu(apiUrl: string): Observable<any> {
+    return this.http.get<any>(apiUrl);
   }
 }

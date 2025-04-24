@@ -11,15 +11,19 @@
 
   <div class="restaurant-image">
     <img
-      *ngIf="restaurant.image"
-      [src]="restaurant.image.startsWith('http') ? restaurant.image : 'http://localhost:8000' + restaurant.image"
+      *ngIf="restaurant?.image; else noImage"
+      [src]="restaurant.image?.startsWith('http') ? restaurant.image : 'http://127.0.0.1:8000/' + restaurant.image"
       alt="Фото ресторана"
     />
+    <ng-template #noImage>
+      <img src="path/to/placeholder.jpg" alt="Нет изображения" />
+    </ng-template>
   </div>
+  
 </div>
 
-<!-- карта
-<div id="map" class="map-container" style="height: 300px; margin-top: 1rem;"></div> -->
+
+<div id="map" class="map-container" style="height: 300px; margin-top: 1rem;"></div>
 
 <nav>
   <a [routerLink]="['menu']">📋 Меню</a> |

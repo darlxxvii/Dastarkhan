@@ -20,6 +20,20 @@ body {
     text-align: center;
     color: #333;
   }
+
+  .center-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    justify-content: center; 
+    height: 40vh;        
+    text-align: center;
+  }
+  
+  .logo {
+    max-width: 200px;
+    margin: auto;
+  }
   
   .login-container input {
     width: 100%;
@@ -69,4 +83,9 @@ body {
   
   .login-container a:hover {
     text-decoration: underline;
+  }
+
+h2{
+    color: #1F5B3B;
+    font-size: 40px;
   }

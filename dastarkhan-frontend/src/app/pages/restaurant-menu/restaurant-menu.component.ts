@@ -20,9 +20,13 @@ export class RestaurantMenuComponent implements OnInit {
     const parentRoute = this.route.parent;
     if (parentRoute) {
       parentRoute.paramMap.subscribe(params => {
-        this.restaurantId = Number(params.get('id'));
-        console.log('ID из parent:', this.restaurantId);
-        this.loadMenu();
+        const id = params.get('id');
+        if (id) {
+          this.restaurantId = Number(id);
+          this.loadMenu();
+        } else {
+          console.error('restaurantId не найден в параметрах URL');
+        }
       });
     } else {
       console.error('parent route not found');
@@ -30,9 +34,9 @@ export class RestaurantMenuComponent implements OnInit {
   }
   
   loadMenu() {
-    this.menuService.getMenu(this.restaurantId).subscribe({
+    const apiUrl = `http://localhost:8000/api/menu/?restaurant_id=${this.restaurantId}`;
+    this.menuService.getMenu(apiUrl).subscribe({
       next: (data) => {
-        console.log('меню:', data);
         this.menuItems = data;
       },
       error: (err) => {
@@ -40,7 +44,4 @@ export class RestaurantMenuComponent implements OnInit {
       }
     });
   }
-  
-  
-  
 }

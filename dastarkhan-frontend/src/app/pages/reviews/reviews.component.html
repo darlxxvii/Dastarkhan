@@ -1,0 +1,28 @@
+<p>reviews works!</p>
+<div class="card">
+    <h4>Оставить отзыв</h4>
+  
+    <label>Оценка:</label>
+    <div>
+      <span *ngFor="let star of [1,2,3,4,5]" (click)="rating = star" style="cursor: pointer;">
+        <span [style.color]="star <= rating ? '#FFD700' : '#ccc'">★</span>
+      </span>
+    </div>
+  
+    <label>Комментарий:</label>
+    <textarea [(ngModel)]="comment" rows="3" placeholder="Напишите отзыв..."></textarea>
+  
+    <button (click)="submitReview()">Отправить</button>
+  </div>
+  
+  <ul>
+    <li *ngFor="let review of reviews">
+      <strong style="color: #1F41FF;">{{ review.user }}</strong><br />
+      <span *ngFor="let star of [1,2,3,4,5]">
+        <span [style.color]="star <= review.rating ? '#FFD700' : '#ccc'">★</span>
+      </span>
+      <p style="margin: 0.5rem 0 0;">{{ review.comment }}</p>
+    </li>
+  </ul>
+
+  

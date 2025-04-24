@@ -1,0 +1,28 @@
+<img src="../../assets/dasLogo.png" class="logo" />
+<h3 id="wd">Dastarkhanga kosh keldiniz!</h3>
+<h1>Restaurants</h1>
+
+<input
+  type="text"
+  placeholder="Search"
+  [value]="search" 
+  (input)="onSearchChange($event)" 
+  style="margin-bottom: 20px; padding: 10px; width: 100%;" />
+
+<div *ngIf="loading">Loading...</div>
+
+<ul *ngIf="!loading">
+  <li *ngFor="let restaurant of filteredRestaurants">
+    <a [routerLink]="['/restaurant', restaurant.id]">
+      {{ restaurant.name }} - {{ restaurant.location }}
+    </a>
+  </li>
+  <li *ngIf="filteredRestaurants.length === 0">Not found</li>
+</ul>
+
+<div class="map-container">
+  <h1>Map</h1>
+  <app-map></app-map> 
+</div>
+
+<button (click)="logout()">Log out</button>

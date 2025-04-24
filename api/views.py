@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status, generics
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
@@ -11,6 +11,21 @@ from rest_framework_simplejwt.tokens import RefreshToken
 class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
+
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)
+
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
+
+    def destroy(self, request, *args, **kwargs):
+        return super().destroy(request, *args, **kwargs)
+    
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
 
 class TableViewSet(viewsets.ModelViewSet):
     queryset = Table.objects.all()
@@ -35,6 +50,14 @@ class MenuItemViewSet(viewsets.ModelViewSet):
         if restaurant_id:
             return self.queryset.filter(restaurant_id=restaurant_id)
         return self.queryset.none()
+    
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 @api_view(['GET'])
 def restaurant_tables(request, restaurant_id):
@@ -111,7 +134,6 @@ def create_booking(request):
         date=date,
         time=time
     )
-    
 
     return Response({'detail': 'Booking created successfully'}, status=status.HTTP_201_CREATED)
 
@@ -148,3 +170,14 @@ def create_review(request):
 
     serializer = ReviewSerializer(review)
     return Response(serializer.data, status=201)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def logout_view(request):
+    try:
+        refresh_token = request.data["refresh"]
+        token = RefreshToken(refresh_token)
+        token.blacklist()
+        return Response({"message": "Logged out successfully"}, status=205)
+    except Exception as e:
+        return Response({"error": str(e)}, status=400)

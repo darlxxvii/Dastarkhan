@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffbea; /* пастельный фон */
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .booking-wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 1.5rem;
+  }
+  
+  h2, h3 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin: 1.25rem 0 0.4rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #fefefe;
+    transition: border-color 0.2s ease;
+  }
+  
+  input[type="date"]:focus,
+  input[type="time"]:focus {
+    border-color: #1F41FF;
+    outline: none;
+    background-color: #ffffff;
+  }
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.3rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #1F41FF;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0e2fdc;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .card .selected {
+    border: 2px solid #1F41FF;
+  }
+  
+  hr {
+    margin: 2rem 0 1.5rem;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+  }

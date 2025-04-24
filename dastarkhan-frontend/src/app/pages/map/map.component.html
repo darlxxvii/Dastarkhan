@@ -1,0 +1,12 @@
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+<div style="width: 100%; height: 400px;">
+    <google-map 
+      [height]="'100%'"
+      [width]="'100%'"
+      [center]="center"
+      [zoom]="zoom"
+      [apiKey]="apiKey">
+      <map-marker [position]="center"></map-marker>
+    </google-map>
+  </div>
+  

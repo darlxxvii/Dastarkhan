@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffbea; /* пастельно-жёлтый фон */
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .registration-container {
+    max-width: 380px;
+    margin: 80px auto;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  .registration-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .registration-container input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fdfdfc;
+    transition: border 0.2s, background-color 0.2s;
+  }
+  
+  .registration-container input:focus {
+    border-color: #1F41FF;
+    background-color: #fff;
+    outline: none;
+  }
+  
+  .registration-container button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #1F41FF; /* Синий основной */
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .registration-container button:hover {
+    background-color: #0e2fdc; /* Более тёмный синий при наведении */
+  }
+  
+  .registration-container p {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .registration-container a {
+    color: #1F41FF;
+    text-decoration: none;
+  }
+  
+  .registration-container a:hover {
+    text-decoration: underline;
+  }

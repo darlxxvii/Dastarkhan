@@ -8,6 +8,8 @@ class Restaurant(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
     cuisine = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='restaurant_images/', blank=True, null=True) 
+    
     def update_average_rating(self):
         reviews = self.reviews.all()  
         if reviews.exists():
@@ -55,3 +57,13 @@ class FoodPreOrder(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.restaurant.name}"
 
+class AvailableTableManager(models.Manager):
+    def available(self):
+        return self.filter(is_available=True)
+
+Table.add_to_class('objects', AvailableTableManager())
+
+class Task(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    completed = models.BooleanField(default=False)

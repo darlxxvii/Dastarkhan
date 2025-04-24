@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffbea;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .menu-wrapper {
+    max-width: 680px;
+    margin: 20px auto;
+    padding: 1rem 1.25rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: #333;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+    color: #222;
+  }
+  
+  .card p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .card p:last-child {
+    font-weight: 500;
+  }
+  
+  .card p:has(✅) {
+    color: #2d8f2d;
+  }
+  
+  .card p:has(❌) {
+    color: #d10000;
+  }

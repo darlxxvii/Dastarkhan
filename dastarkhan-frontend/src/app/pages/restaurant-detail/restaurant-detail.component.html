@@ -1,0 +1,31 @@
+<h2>Детали ресторана</h2>
+
+<div class="restaurant-header">
+  <div class="restaurant-text">
+    <p *ngIf="restaurant">
+      <strong>{{ restaurant.name }}</strong><br />
+      {{ restaurant.description }}<br />
+      <em>Локация: {{ restaurant.location }}</em>
+    </p>
+  </div>
+
+  <div class="restaurant-image">
+    <img
+      *ngIf="restaurant.image"
+      [src]="restaurant.image.startsWith('http') ? restaurant.image : 'http://localhost:8000' + restaurant.image"
+      alt="Фото ресторана"
+    />
+  </div>
+</div>
+
+<!-- карта
+<div id="map" class="map-container" style="height: 300px; margin-top: 1rem;"></div> -->
+
+<nav>
+  <a [routerLink]="['menu']">📋 Меню</a> |
+  <a [routerLink]="['reviews']">⭐ Отзывы</a> |
+  <a [routerLink]="['booking']">📅 Забронировать</a>
+</nav>
+
+<hr />
+<router-outlet></router-outlet>

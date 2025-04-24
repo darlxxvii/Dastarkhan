@@ -1,0 +1,35 @@
+<div class="booking-wrapper">
+  <h2>Бронирование столика</h2>
+
+  <label>Выберите дату:</label>
+  <input type="date" [(ngModel)]="selectedDate" />
+
+  <label>Выберите время:</label>
+  <input type="time" [(ngModel)]="selectedTime" />
+
+  <button (click)="getAvailableTables()">Показать доступные столы</button>
+
+  <hr />
+
+  <div *ngIf="tables.length > 0">
+    <h3>Доступные столы:</h3>
+
+    <div *ngFor="let table of tables" class="card">
+      <p><strong>Стол №{{ table.id }}</strong> — {{ table.size }} мест</p>
+
+      <button
+        (click)="onSelectTable(table.id)"
+        [class.selected]="selectedTableId === table.id">
+        Выбрать стол
+      </button>
+
+      <div *ngIf="selectedTableId === table.id" style="margin-top: 10px;">
+        <button (click)="onBook()">Забронировать</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="tables.length === 0 && selectedDate && selectedTime">
+    <p>Нет доступных столов на это время.</p>
+  </div>
+</div>

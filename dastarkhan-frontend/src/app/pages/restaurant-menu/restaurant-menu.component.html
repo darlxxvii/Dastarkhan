@@ -1,0 +1,12 @@
+<p>restaurant-menu works!</p>
+<div class="menu-wrapper">
+    <h2>Меню ресторана</h2>
+  
+    <div *ngFor="let item of menuItems" class="card">
+      <h3>{{ item.name }} — {{ item.price }}₸</h3>
+      <p>{{ item.description }}</p>
+      <p *ngIf="item.is_available">✅ В наличии</p>
+      <p *ngIf="!item.is_available">❌ Нет в наличии</p>
+    </div>
+  </div>
+  

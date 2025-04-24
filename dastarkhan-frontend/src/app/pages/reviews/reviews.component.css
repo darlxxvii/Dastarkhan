@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffbea;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .reviews-wrapper {
+    max-width: 680px;
+    margin: 30px auto;
+    padding: 1.25rem;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  /* Список отзывов */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+  
+  li {
+    background-color: #fff;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #444;
+  }
+  
+  li span {
+    font-size: 1.1rem;
+    margin-right: 4px;
+  }
+  
+  /* Форма */
+  .card {
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  }
+  
+  .card h4 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #222;
+  }
+  
+  label {
+    display: block;
+    margin: 1rem 0 0.3rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: inherit;
+    background-color: #fdfdfc;
+  }
+  
+  textarea:focus {
+    border-color: #1F41FF;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #1F41FF;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #0e2fdc;
+  }
